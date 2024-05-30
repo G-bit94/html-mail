@@ -103,11 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <tr>
                         <td class='pad' style='padding-bottom:20px;padding-left:15px;padding-right:15px;padding-top:20px;text-align:center;'>
                         <div align='center' class='alignment'>
-                        <!--[if mso]><v:roundrect xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href=\"$replyURL\" style='height:40px;width:202px;v-text-anchor:middle;' arcsize='60%' stroke='false' fillcolor='#ffffff'><w:anchorlock/><v:textbox inset='0px,0px,0px,0px'><center style='color:$backgroundColor; font-family:sans-serif; font-size:15px'><![endif]-->
-                        <a href=\"$replyURL\" style='text-decoration:none;display:inline-block;color:$backgroundColor;background-color:#ffffff;border-radius:24px;width:auto;border-top:0px solid transparent;font-weight:undefined;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:Varela Round, Trebuchet MS, Helvetica, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;' target='_blank'>
+                                                <a href=\"$replyURL\" style='text-decoration:none;display:inline-block;color:$backgroundColor;background-color:#ffffff;border-radius:24px;width:auto;border-top:0px solid transparent;font-weight:undefined;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:Varela Round, Trebuchet MS, Helvetica, sans-serif;text-align:center;mso-border-alt:none;word-break:keep-all;' target='_blank'>
                         <span style='padding-left:25px;padding-right:25px;font-size:15px;display:inline-block;letter-spacing:normal;'><span style='word-break: break-word;'><span data-mce-style='' style='line-height: 30px;'><strong>Reply</strong></span></span></span></a>
-                        <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-                        </div>
+                                                </div>
                         </td>
                         </tr>
                         </table>";
@@ -124,8 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <title>$mail->Subject</title>
                     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'/>
                     <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
-                    <!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]-->
-                    <style>
+                                        <style>
                             * {
                                 box-sizing: border-box;
                             }
@@ -337,9 +334,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <table cellpadding='0' cellspacing='0' role='presentation' style='mso-table-lspace: 0pt; mso-table-rspace: 0pt;' width='100%'>
                         <tr>
                         <td class='alignment' style='vertical-align: middle; text-align: center;'>
-                        <!--[if vml]><table align='left' cellpadding='0' cellspacing='0' role='presentation' style='display:inline-block;padding-left:0px;padding-right:0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;'><![endif]-->
-                        <!--[if !vml]><!-->
-                        </td>
+                                                                        </td>
                         </tr>
                         </table>
                         </td>
@@ -356,8 +351,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </td>
                         </tr>
                         </tbody>
-                        </table><!-- End -->
-                        </div>
+                        </table>                        </div>
                                     </body> 
                                 </html>";
     echo ($mail->Body);
