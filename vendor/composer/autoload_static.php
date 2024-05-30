@@ -11,12 +11,20 @@ class ComposerStaticInit42d7ae41f3c673fc56fbc4a3835fa189
         array (
             'PHPMailer\\PHPMailer\\' => 20,
         ),
+        'H' => 
+        array (
+            'HotReloader\\' => 12,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'HotReloader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/felippe-regazio/php-hot-reloader/src',
         ),
     );
 

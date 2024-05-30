@@ -1,3 +1,10 @@
+<?php
+
+require_once "vendor/php-hot-reloader/src/HotReloader.php";
+new HotReloader\HotReloader('//localhost/mail/vendor/php-hot-reloader/phrwatcher.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 
@@ -209,7 +216,7 @@
         </symbol>
     </svg>
 
-    <div class="col-lg-8 mx-auto p-4 py-md-5">
+    <div class="container-fluid col-lg mx-auto py-md-5">
         <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
             <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
@@ -220,192 +227,212 @@
         </header>
 
         <main>
-            <div class="position-static d-block p-4 py-md-4">
-                <div class="rounded-4 shadow">
-                    <div class="p-5 pb-4 border-bottom-0">
-                        <h1 class="fw-bold mb-0 fs-2">Enter details below</h1>
-                    </div>
-
-                    <div class="p-5 pt-0">
-
-                        <div id="inputsWrapper" class="row border rounded-3 g-3 position-relative">
-                            <h2 class="fs-5 fw-bold mb-3">SMTP server details</h2>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="text" class="form-control rounded-3" id="mailHost"
-                                    placeholder="smtp.gmail.com" value="smtp.gmail.com">
-                                <label for="mailHost">Mail Host</label>
-                                <div class="invalid-tooltip">
-                                    Mail Host is required.
-                                </div>
-                            </div>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="number" class="form-control rounded-3" id="port" placeholder="587"
-                                    value="587">
-                                <label for="port">Port</label>
-                                <div class="invalid-tooltip">
-                                    Port is required.
-                                </div>
-                            </div>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="email" class="form-control rounded-3" id="smtpUsername"
-                                    placeholder="username@example.com" value="username@example.com">
-                                <label for="smtpUsername">SMTP username (email)</label>
-                                <div class="invalid-tooltip">
-                                    SMTP username is required.
-                                </div>
-                            </div>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="password" class="form-control rounded-3" id="smtpPassword"
-                                    placeholder="Password" value="12345678">
-                                <label for="smtpPassword">SMTP Password</label>
-                                <div class="invalid-tooltip">
-                                    SMTP Password is required.
-                                </div>
-                            </div>
-
-                            <hr class="my-4">
-                            <h2 class="fs-5 fw-bold mb-3">Your email details</h2>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="email" class="form-control rounded-3" id="emailFrom"
-                                    placeholder="your-email@example.com" value="your-email@example.com">
-                                <label for="emailFrom">Email from (Your address)</label>
-                                <div class="invalid-tooltip">
-                                    Email from is required.
-                                </div>
-                            </div>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="text" class="form-control rounded-3" id="emailFromName"
-                                    placeholder="Kelvin" value="Kelvin">
-                                <label for="emailFromName">Email from (Your name)</label>
-                                <div class="invalid-tooltip">
-                                    Your name is required.
-                                </div>
-                            </div>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="email" class="form-control rounded-3" id="recipient"
-                                    placeholder="recipient@example.com" value="recipient@example.com">
-                                <label for="recipient">Recipient</label>
-                                <div class="invalid-tooltip">
-                                    Recipient is required.
-                                </div>
-                            </div>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="text" class="form-control rounded-3" id="subject"
-                                    placeholder="Email Subject">
-                                <label for="subject">Subject</label>
-                                <div class="invalid-tooltip">
-                                    Subject is required.
-                                </div>
-                            </div>
-
-                            <hr class="my-4">
-                            <h2 class="fs-5 fw-bold mb-3">Customize email body</h2>
-
-                            <div class="form-floating mb-3 col-md-6 position-relative">
-                                <input type="color" class="form-control rounded-3" id="backgroundColor"
-                                    placeholder="#ffffff" value="#590b3e">
-                                <label for="backgroundColor">Background color</label>
-                            </div>
-
-                            <div class="position-relative">
-                                <span class="m-2"><strong>Heading</strong> <em>(HTML allowed)</em></span>
-                                <div class="form-control rounded overflow-auto" id="heading" contenteditable>
-                                    <p style="margin:0;font-size:14px;text-align:center"><span
-                                            style="font-size:22px"><strong>Heya!</strong> 👋</span></p>
-                                </div>
-                            </div>
-
-                            <div class="position-relative">
-                                <span class="m-2"><strong>Intro Line</strong> <em>(HTML allowed)</em></span>
-                                <div class="form-control rounded overflow-auto" id="introLine" contenteditable>
-                                    <p style='margin: 0; font-size: 16px; text-align: center; line-height: 24px;'>
-                                        Call me <strong>Kelvin</strong>. 😊</p>
-                                </div>
-                            </div>
-
-                            <div class="position-relative">
-                                <span class="m-2"><strong>Email Body</strong> <em>(HTML allowed)</em></span>
-                                <div class="form-control rounded overflow-auto" id="emailBody" contenteditable>
-                                    <p
-                                        style='margin: 0; font-size: 16px; text-align: center; line-height: 24px; margin-top: 15px;'>
-                                        I stumbled upon your Craigslist posting and well, I'm here to take you up on
-                                        that.
-                                        I'm <em>28</em> and happen to be looking for an FWB arrangement. I'm a
-                                        <strong>realist</strong>, open-minded, and a tad bit reserved.
-                                        A <strong>metalhead</strong> 🤘 and I've binged a few sitcoms if they're your
-                                        thing too.
-                                    </p>
-                                    <p
-                                        style='margin: 0; font-size: 16px; text-align: center; line-height: 24px; margin-top: 15px;'>
-                                        5ft 6in height and <em>brown chocolate skin color</em>. Can't wait to make your
-                                        acquaintance. 😊
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="position-relative">
-                                <span class="m-2"><strong>Intro Line</strong> <em>(HTML allowed)</em></span>
-                                <div class="form-control rounded overflow-auto" id="outroLine" contenteditable>
-                                    <p
-                                        style='margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;'>
-                                        <em>PS: I don't go collecting pics. Or do I? 😉</em>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="position-relative">
-                                <span class="m-2"><strong>Footer text</strong> <em>(HTML allowed)</em></span>
-                                <div class="form-control rounded overflow-auto" id="footerText" contenteditable>
-                                    <p
-                                        style='margin: 0; font-size: 12px; text-align: center; mso-line-height-alt: 14.399999999999999px;'>
-                                        <span><strong>Kelvin | Mail</strong>.</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <hr class="my-4">
-                            <!-- Reply settings -->
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="showReplyButton">
-                                <label class="form-check-label" for="showReplyButton">Show reply button</label>
-                            </div>
-
-                            <div id="replySettings" style="display: none;">
-                                <h2 class="fs-5 fw-bold mb-3">Reply settings (optional)</h2>
-
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="allowReplyToCurrentSubject">
-                                    <label class="form-check-label" for="allowReplyToCurrentSubject">
-                                        Reply to a different subject (set above)
-                                    </label>
-                                </div>
-
-                                <!-- Alternative subject -->
-                                <div id="alternativeSubjectWrapper"
-                                    class="form-floating mb-3 col-md-6 position-relative" style="display: none;">
-                                    <input type="text" class="form-control rounded-3" id="alternativeSubject"
-                                        placeholder="Alternative Subject">
-                                    <label for="alternativeSubject">Alternative Subject</label>
-                                </div>
-                            </div>
-
-                            <div class="my-2 mx-5">
-                                <button class="w-75 mb-2 btn btn-lg rounded-3 btn-dark" id="submit" type="button">Send
-                                    email</button>
-                            </div>
-
-                            <small class="text-body-secondary"><em>PHPMailer under the hood.</em></small>
+            <div class="row rounded-4 shadow m-2">
+                <div class="col-sm-7 border-end">
+                    <div class="position-static d-block p-4 py-md-4">
+                        <div class="p-5 pb-4 border-bottom-0">
+                            <h1 class="fw-bold mb-0 fs-2">Enter details below</h1>
                         </div>
 
+                        <div class="p-5 pt-0">
+
+                            <div id="inputsWrapper" class="row border rounded-3 g-3 position-relative">
+                                <h2 class="fs-5 fw-bold mb-3">SMTP server details</h2>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="text" class="form-control rounded-3" id="mailHost"
+                                        placeholder="smtp.gmail.com" value="smtp.gmail.com">
+                                    <label for="mailHost">Mail Host</label>
+                                    <div class="invalid-tooltip">
+                                        Mail Host is required.
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="number" class="form-control rounded-3" id="port" placeholder="587"
+                                        value="587">
+                                    <label for="port">Port</label>
+                                    <div class="invalid-tooltip">
+                                        Port is required.
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="email" class="form-control rounded-3" id="smtpUsername"
+                                        placeholder="username@example.com" value="username@example.com">
+                                    <label for="smtpUsername">SMTP username (email)</label>
+                                    <div class="invalid-tooltip">
+                                        SMTP username is required.
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="password" class="form-control rounded-3" id="smtpPassword"
+                                        placeholder="Password" value="12345678">
+                                    <label for="smtpPassword">SMTP Password</label>
+                                    <div class="invalid-tooltip">
+                                        SMTP Password is required.
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+                                <h2 class="fs-5 fw-bold mb-3">Your email details</h2>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="email" class="form-control rounded-3" id="emailFrom"
+                                        placeholder="your-email@example.com" value="your-email@example.com">
+                                    <label for="emailFrom">Email from (Your address)</label>
+                                    <div class="invalid-tooltip">
+                                        Email from is required.
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="text" class="form-control rounded-3" id="emailFromName"
+                                        placeholder="Kelvin" value="Kelvin">
+                                    <label for="emailFromName">Email from (Your name)</label>
+                                    <div class="invalid-tooltip">
+                                        Your name is required.
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="email" class="form-control rounded-3" id="recipient"
+                                        placeholder="recipient@example.com" value="recipient@example.com">
+                                    <label for="recipient">Recipient</label>
+                                    <div class="invalid-tooltip">
+                                        Recipient is required.
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="text" class="form-control rounded-3" id="subject"
+                                        placeholder="Email Subject">
+                                    <label for="subject">Subject</label>
+                                    <div class="invalid-tooltip">
+                                        Subject is required.
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+                                <h2 class="fs-5 fw-bold mb-3">Customize email body</h2>
+
+                                <div class="form-floating mb-3 col-md-6 position-relative">
+                                    <input type="color" class="form-control rounded-3" id="backgroundColor"
+                                        placeholder="#590b3e" value="#590b3e">
+                                    <label for="backgroundColor">Background color</label>
+                                </div>
+
+                                <div class="position-relative">
+                                    <span class="m-2"><strong>Heading</strong> <em>(HTML allowed)</em></span>
+                                    <div class="form-control rounded overflow-auto" id="heading" contenteditable>
+                                        <p style="margin:0;font-size:14px;text-align:center"><span
+                                                style="font-size:22px"><strong>Heya!</strong> 👋</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="position-relative">
+                                    <span class="m-2"><strong>Intro Line</strong> <em>(HTML allowed)</em></span>
+                                    <div class="form-control rounded overflow-auto" id="introLine" contenteditable>
+                                        <p style='margin: 0; font-size: 16px; text-align: center; line-height: 24px;'>
+                                            Call me <strong>Kelvin</strong>. 😊</p>
+                                    </div>
+                                </div>
+
+                                <div class="position-relative">
+                                    <span class="m-2"><strong>Email Body</strong> <em>(HTML allowed)</em></span>
+                                    <div class="form-control rounded overflow-auto" id="emailBody" contenteditable>
+                                        <p
+                                            style='margin: 0; font-size: 16px; text-align: center; line-height: 24px; margin-top: 15px;'>
+                                            I stumbled upon your Craigslist posting and well, I'm here to take you
+                                            up on
+                                            that.
+                                            I'm <em>28</em> and happen to be looking for an FWB arrangement. I'm a
+                                            <strong>realist</strong>, open-minded, and a tad bit reserved.
+                                            A <strong>metalhead</strong> 🤘 and I've binged a few sitcoms if they're
+                                            your
+                                            thing too.
+                                        </p>
+                                        <p
+                                            style='margin: 0; font-size: 16px; text-align: center; line-height: 24px; margin-top: 15px;'>
+                                            5ft 6in height and <em>brown chocolate skin color</em>. Can't wait to
+                                            make
+                                            your
+                                            acquaintance. 😊
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="position-relative">
+                                    <span class="m-2"><strong>Intro Line</strong> <em>(HTML allowed)</em></span>
+                                    <div class="form-control rounded overflow-auto" id="outroLine" contenteditable>
+                                        <p
+                                            style='margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21px;'>
+                                            <em>PS: I don't go collecting pics. Or do I? 😉</em>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="position-relative">
+                                    <span class="m-2"><strong>Footer text</strong> <em>(HTML allowed)</em></span>
+                                    <div class="form-control rounded overflow-auto" id="footerText" contenteditable>
+                                        <p
+                                            style='margin: 0; font-size: 12px; text-align: center; mso-line-height-alt: 14.399999999999999px;'>
+                                            <span><strong>Kelvin | Mail</strong>.</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+                                <!-- Reply settings -->
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="showReplyButton">
+                                    <label class="form-check-label" for="showReplyButton">Show reply button</label>
+                                </div>
+
+                                <div id="replySettings" style="display: none;">
+                                    <h2 class="fs-5 fw-bold mb-3">Reply settings (optional)</h2>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            id="allowReplyToCurrentSubject">
+                                        <label class="form-check-label" for="allowReplyToCurrentSubject">
+                                            Reply to a different subject (set above)
+                                        </label>
+                                    </div>
+
+                                    <!-- Alternative subject -->
+                                    <div id="alternativeSubjectWrapper"
+                                        class="form-floating mb-3 col-md-6 position-relative" style="display: none;">
+                                        <input type="text" class="form-control rounded-3" id="alternativeSubject"
+                                            placeholder="Alternative Subject">
+                                        <label for="alternativeSubject">Alternative Subject</label>
+                                    </div>
+                                </div>
+
+                                <div class="my-2 mx-5">
+                                    <button class="w-75 mb-2 btn btn-lg rounded-3 btn-dark" id="submit"
+                                        type="button">Send
+                                        email</button>
+                                </div>
+
+                                <small class="text-body-secondary"><em>PHPMailer under the hood.</em></small>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="position-relative">
+                        <div class="p-5 pb-4 border-bottom-0">
+                            <h1 class="fw-bold mb-0 fs-2">HTML Email Preview</h1>
+                        </div>
+                        <!-- Preview Section -->
+                        <hr class="my-4">
+                        <h2 class="fs-5 fw-bold mb-3">Email Preview</h2>
+                        <div id="emailPreview" class="p-3 border rounded-3 bg-light">
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -420,21 +447,75 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             const inputsWrapper = document.getElementById("inputsWrapper");
+            const showReplyButton = document.getElementById("showReplyButton");
+            const replySettings = document.getElementById("replySettings");
+            const allowReplyToCurrentSubject = document.getElementById("allowReplyToCurrentSubject");
+            const alternativeSubjectWrapper = document.getElementById("alternativeSubjectWrapper");
+            const sendInfo = {};
 
-            const fieldsToPreviewMap = {
-                "heading": "previewHeading",
-                "introLine": "previewIntroLine",
-                "emailBody": "previewEmailBody",
-                "outroLine": "previewOutroLine",
-                "footerText": "previewFooterText",
-                "subject": "previewSubject"
-            };
+            // Toggle reply settings visibility
+            showReplyButton.addEventListener("change", function () {
+                replySettings.style.display = this.checked ? "block" : "none";
+            });
 
-            const updatePreview = (id, value) => {
-                if (fieldsToPreviewMap[id]) {
-                    document.getElementById(fieldsToPreviewMap[id]).innerHTML = value;
+            // Toggle alternative subject field visibility
+            allowReplyToCurrentSubject.addEventListener("change", function () {
+                alternativeSubjectWrapper.style.display = this.checked ? "block" : "none";
+            });
+
+            // Get the values of all input elements
+            inputsWrapper.querySelectorAll("input, textarea").forEach((input) => {
+                sendInfo[input.id] = input.value;
+            });
+            // Include HTML content of all contenteditable divs
+            ["heading", "introLine", "emailBody", "outroLine", "footerText"].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    sendInfo[id] = element.innerHTML;
                 }
-            };
+            });
+
+            const submitButton = document.getElementById("submit");
+
+            submitButton.addEventListener("click", (event) => {
+
+                sendInfo.submit = true;
+
+                // Remove existing validation feedback
+                inputsWrapper.querySelectorAll(".invalid-tooltip").forEach(tooltip => {
+                    tooltip.style.display = "none";
+                });
+                inputsWrapper.querySelectorAll(".is-invalid").forEach(input => {
+                    input.classList.remove("is-invalid");
+                });
+
+
+                // Send the sendInfo object using POST to send_mail.php as JSON
+                fetch("send_mail.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(sendInfo)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.required_inputs) {
+                            data.required_inputs.forEach(field => {
+                                const inputElement = document.getElementById(field);
+                                const tooltip = inputElement.nextElementSibling;
+                                inputElement.classList.add("is-invalid");
+                                tooltip.style.display = "block";
+                            });
+                        } else {
+                            alert("Form submitted successfully.");
+                            // Optionally, reset the form or perform other actions upon successful submission
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+            });
 
             const saveToLocalStorage = (id, value) => {
                 localStorage.setItem(id, value);
@@ -443,45 +524,29 @@
             // Handle input fields
             inputsWrapper.querySelectorAll("input, textarea").forEach((input) => {
                 input.addEventListener("input", () => {
-                    updatePreview(input.id, input.value);
                     saveToLocalStorage(input.id, input.value);
+                    previewBuild();
                 });
 
                 // Load from localStorage on page load
                 const storedValue = localStorage.getItem(input.id);
                 if (storedValue !== null) {
                     input.value = storedValue;
-                    updatePreview(input.id, storedValue);
                 }
             });
 
             // Handle contenteditable divs
             inputsWrapper.querySelectorAll("[contenteditable]").forEach((div) => {
                 div.addEventListener("input", () => {
-                    updatePreview(div.id, div.innerHTML);
                     saveToLocalStorage(div.id, div.innerHTML);
+                    previewBuild();
                 });
 
                 // Load from localStorage on page load
                 const storedValue = localStorage.getItem(div.id);
                 if (storedValue !== null) {
                     div.innerHTML = storedValue;
-                    updatePreview(div.id, storedValue);
                 }
-            });
-
-            // Show/hide reply settings
-            const showReplyButton = document.getElementById("showReplyButton");
-            const replySettings = document.getElementById("replySettings");
-            const allowReplyToCurrentSubject = document.getElementById("allowReplyToCurrentSubject");
-            const alternativeSubjectWrapper = document.getElementById("alternativeSubjectWrapper");
-
-            showReplyButton.addEventListener("change", function () {
-                replySettings.style.display = this.checked ? "block" : "none";
-            });
-
-            allowReplyToCurrentSubject.addEventListener("change", function () {
-                alternativeSubjectWrapper.style.display = this.checked ? "block" : "none";
             });
 
             // Load reply settings state from localStorage
@@ -504,13 +569,27 @@
                 localStorage.setItem("allowReplyToCurrentSubject", this.checked);
             });
 
-            // Populate preview section on page load
-            Object.keys(fieldsToPreviewMap).forEach(id => {
-                const value = localStorage.getItem(id);
-                if (value !== null) {
-                    updatePreview(id, value);
-                }
-            });
+
+            const previewBuild = () => {
+
+                sendInfo.preview = true;
+
+                fetch("send_mail.php", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(sendInfo)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById("emailPreview").innerHTML = data.preview;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            };
+
         });
 
     </script>

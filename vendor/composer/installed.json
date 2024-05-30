@@ -1,6 +1,41 @@
 {
     "packages": [
         {
+            "name": "felippe-regazio/php-hot-reloader",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/felippe-regazio/php-hot-reloader.git",
+                "reference": "416ad9f1ff4db236f4d76b91a769f8f9d53907f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/felippe-regazio/php-hot-reloader/zipball/416ad9f1ff4db236f4d76b91a769f8f9d53907f3",
+                "reference": "416ad9f1ff4db236f4d76b91a769f8f9d53907f3",
+                "shasum": ""
+            },
+            "time": "2021-04-20T16:12:37+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "HotReloader\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A class to add a complete live reload feature to any php project",
+            "support": {
+                "issues": "https://github.com/felippe-regazio/php-hot-reloader/issues",
+                "source": "https://github.com/felippe-regazio/php-hot-reloader/tree/master"
+            },
+            "install-path": "../felippe-regazio/php-hot-reloader"
+        },
+        {
             "name": "phpmailer/phpmailer",
             "version": "v6.9.1",
             "version_normalized": "6.9.1.0",

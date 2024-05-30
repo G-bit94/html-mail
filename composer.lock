@@ -4,8 +4,40 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "baf0b1b659e688a64051c5ee9742a77e",
+    "content-hash": "e5cece48e71a560e8d269ce5a3a4985c",
     "packages": [
+        {
+            "name": "felippe-regazio/php-hot-reloader",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/felippe-regazio/php-hot-reloader.git",
+                "reference": "416ad9f1ff4db236f4d76b91a769f8f9d53907f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/felippe-regazio/php-hot-reloader/zipball/416ad9f1ff4db236f4d76b91a769f8f9d53907f3",
+                "reference": "416ad9f1ff4db236f4d76b91a769f8f9d53907f3",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HotReloader\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A class to add a complete live reload feature to any php project",
+            "support": {
+                "issues": "https://github.com/felippe-regazio/php-hot-reloader/issues",
+                "source": "https://github.com/felippe-regazio/php-hot-reloader/tree/master"
+            },
+            "time": "2021-04-20T16:12:37+00:00"
+        },
         {
             "name": "phpmailer/phpmailer",
             "version": "v6.9.1",
@@ -91,7 +123,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "felippe-regazio/php-hot-reloader": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
